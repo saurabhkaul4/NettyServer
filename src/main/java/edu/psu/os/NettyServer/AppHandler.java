@@ -1,16 +1,17 @@
 package edu.psu.os.NettyServer;
 
+import static io.netty.buffer.Unpooled.buffer;
+
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import static io.netty.buffer.Unpooled.*;
 
 public class AppHandler extends ChannelInboundHandlerAdapter {
 
-	public static Map<Integer, Integer> myMap = new ConcurrentHashMap<Integer, Integer>();
+	public static Map<Integer, Integer> myMap = new HashMap<Integer, Integer>();
 	
 	@Override
 	public void channelRead(final ChannelHandlerContext ctx, Object msg) {
