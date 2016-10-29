@@ -4,24 +4,24 @@ import java.util.Map;
 
 public class MapUtil {
 
-	public static String getValue(String result, Map<Integer, Integer> myMap) {
+	public static String getValue(String result, Map<Integer, String> myMap) {
 		String [] parts = result.split(":");
         
         if (parts[0].equalsIgnoreCase("STOP")) {
         	return "";
         }
         Integer mapkey = Integer.parseInt(parts[0]);
-        Integer mapValue = null;
+        String mapValue = null;
         if (parts.length == 2) {
-            mapValue = Integer.parseInt(parts[1]);                    
+            mapValue = parts[1];                    
         }
         
         if (mapValue != null) {
         	myMap.put(mapkey, mapValue);
-    		return "inserted";
+    		return "0";
            
         } else if (!myMap.containsKey(mapkey)) {
-           return "not present";
+           return "-1";
         } else {
            return String.valueOf(myMap.get(mapkey));
         }

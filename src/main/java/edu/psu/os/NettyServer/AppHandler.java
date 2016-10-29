@@ -11,7 +11,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 
 public class AppHandler extends ChannelInboundHandlerAdapter {
 
-	public static Map<Integer, Integer> myMap = new HashMap<Integer, Integer>();
+	public static Map<Integer, String> myMap = new HashMap<Integer, String>();
 	
 	@Override
 	public void channelRead(final ChannelHandlerContext ctx, Object msg) {
